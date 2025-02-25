@@ -64,6 +64,15 @@ class MooreMachine:
             self.current_state = new_state
         return output
 
-def moore_to_mealy_converter(moore_schema: str) -> None:
-    with open(moore_schema, "r") as f:
+def moore_to_mealy_converter(moore_schema_file: str) -> None:
+    with open(moore_schema_file, "r") as f:
         moore_schema = json.load(f)
+    mealy_schema = { "alphabet": moore_schema["alphabet"], "states": moore_schema["states"], "transitions": {}, "init_state": moore_schema["init_state"] }
+    for state, transitions in moore_schema["transitions"].items():
+        mealy_schema["transitions"][state] = {}
+        for symbol, next_state in transitions.items():
+            output = moore_schema["states_output"][next_state]
+            mealy_schema["transitions"][state][symbol] = [next_state, output]
+    with open(moore_schema_file, "w") as f:
+        json.dump(mealy_schema, f, indent=4)
+
