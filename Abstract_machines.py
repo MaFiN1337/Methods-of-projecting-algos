@@ -15,7 +15,7 @@ class MealyMachine:
             self.current_state = saved_state["current_state"]
             self.history = saved_state["history"]
 
-    def process_string(self, input_string):
+    def process_string(self, input_string) -> str:
         output = ""
         for symbol in input_string:
             if symbol not in self.alphabet:
@@ -30,7 +30,7 @@ class MealyMachine:
                   f"new state: {new_state}", f"output: {output_symbol}" )
             self.current_state = new_state
         return output
-    def save_state(self, file_name):
+    def save_state(self, file_name) -> None:
         state_data = {
             "current_state": self.current_state,
             "history": self.history,
@@ -49,7 +49,7 @@ class MooreMachine:
         self.current_state = moore_schema["init_state"]
         self.states_output = moore_schema["states_output"]
 
-    def process_string(self, input_string):
+    def process_string(self, input_string) -> str:
         output = ""
         for symbol in input_string:
             if symbol not in self.alphabet:
@@ -63,3 +63,7 @@ class MooreMachine:
                   f"new state: {new_state}", f"output: {output_symbol}")
             self.current_state = new_state
         return output
+
+def moore_to_mealy_converter(moore_schema: str) -> None:
+    with open(moore_schema, "r") as f:
+        moore_schema = json.load(f)

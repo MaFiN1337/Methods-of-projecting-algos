@@ -1,4 +1,4 @@
-from Abstract_machines import MealyMachine
+from Abstract_machines import *
 
 if __name__ == "__main__":
     machine = MealyMachine("Mealy.json")
