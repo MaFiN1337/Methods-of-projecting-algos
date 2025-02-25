@@ -1,5 +1,5 @@
 import unittest
-from main import MealyMachine
+from Abstract_machines import MealyMachine
 import json
 
 class MyTestCase(unittest.TestCase):
