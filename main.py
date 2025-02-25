@@ -8,6 +8,7 @@ class MealyMachine:
         self.states = mealy_schema['states']
         self.transitions = mealy_schema['transitions']
         self.current_state = mealy_schema['init_state']
+
     def process_string(self, input_string):
         output = ""
         for symbol in input_string:
@@ -18,11 +19,12 @@ class MealyMachine:
             output_symbol = self.transitions[self.current_state][symbol][1]
             output += output_symbol
             new_state = self.transitions[self.current_state][symbol][0]
-            print(f"input state: {self.current_state}", f"symbol: {symbol}", f"new state: {new_state}", f"output: {output_symbol}" )
+            print(f"input state: {self.current_state}", f"symbol: {symbol}",
+                  f"new state: {new_state}", f"output: {output_symbol}" )
             self.current_state = new_state
         return output
 
-def main():
+if __name__ == "__main__":
     machine = MealyMachine("Mealy.json")
     input_str = "abba"
     output_str = machine.process_string(input_str)
