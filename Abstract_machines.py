@@ -38,3 +38,28 @@ class MealyMachine:
         with open(file_name, "w") as f:
             json.dump(state_data, f, indent=4)
         print(f"saved state to {file_name}")
+
+class MooreMachine:
+    def __init__(self, moore_schema_file):
+        with open(moore_schema_file, "r") as f:
+            moore_schema = json.load(f)
+        self.alphabet = moore_schema["alphabet"]
+        self.states = moore_schema["states"]
+        self.transitions = moore_schema["transitions"]
+        self.current_state = moore_schema["init_state"]
+        self.states_output = moore_schema["states_output"]
+
+    def process_string(self, input_string):
+        output = ""
+        for symbol in input_string:
+            if symbol not in self.alphabet:
+                raise ValueError(f"{symbol} not in alphabet")
+            if self.current_state not in self.states:
+                raise ValueError(f"{self.current_state} not in states")
+            new_state = self.transitions[self.current_state][symbol]
+            output_symbol = self.states_output[new_state]
+            output += output_symbol
+            print(f"input state: {self.current_state}", f"symbol: {symbol}",
+                  f"new state: {new_state}", f"output: {output_symbol}")
+            self.current_state = new_state
+        return output
