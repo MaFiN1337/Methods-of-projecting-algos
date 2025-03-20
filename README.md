@@ -1,5 +1,5 @@
 <h1>Mealy's and Moore's machines and work with them</h1>
-<h2>Task 1:</h2>
+<h2>Task 1: ✅</h2>     
 <ol>
     <li>Реалізувати клас MealyMachine для симуляції роботи довільного автомата Мілі, який повинен:
         <ol>
@@ -23,7 +23,7 @@
             <li>Початковий стан: S0</li>
         </ul>
     </li>
-    <li>Реалізувати можливість збереження стану у форматі JSON та повторного запуску автомата.
+    <li>Реалізувати можливість збереження стану у форматі JSON та повторного запуску автомата.     
         <pre>
 Mealy.json:
 {
@@ -38,20 +38,20 @@ Mealy.json:
         </pre>
     </li>
 </ol>
-<h2>Task 2:</h2>
+<h2>Task 2: ✅</h2>           
   Написати програму, що приймає на вхід автомат Мура та переводить його в еквівалентний
   автомат Мілі. Протестувати на власних прикладах.
 <h4>Subject: Methods of projecting algorythms</h4>
 <h4>University: National University of "Kyiv-Mohyla Academy"</h4>
 
 <h1>Find all sums <i>S</i> in list <i>arr</i></h1>
-<h2>Main task</h2>
+<h2>Main task: ✅</h2>
 <ul>
     <li>
-        Function takes list of numbers and sum as input and returns all sums, that are present in list
+        Function takes list of numbers and sum as input and returns all sums, that are present in list       
     </li>
     <li>
-        Function must be written in a recursive way
+        Function must be written in a recursive way          
     </li>
 </ul>
 <h2>Side tasks</h2>
