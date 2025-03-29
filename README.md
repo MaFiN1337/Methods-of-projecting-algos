@@ -67,3 +67,5 @@ Mealy.json:
     </li>
 </ul>
 
+<h1>Maximum subarray</h1>
+<h4>Link: <a href="https://leetcode.com/problems/maximum-subarray/solutions/6592899/on-solution-for-max-sum-in-subarray-by-m-ig46/">my solution</a></h4>
