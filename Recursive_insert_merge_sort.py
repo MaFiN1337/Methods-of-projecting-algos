@@ -1,4 +1,4 @@
-def recurse_merge_sort(arr):
+def recurse_insert_merge_sort(arr):
     if len(arr) == 1:
         return arr
     if len(arr) < 7:
@@ -31,7 +31,3 @@ def insert_sort(arr):
             j -= 1
         arr[j + 1] = key
     return arr
-
-print(recurse_merge_sort([1,2,3,4,5,6,7,8,9,10]))
-print(recurse_merge_sort([5, 3, 7, 1, 8]))
-print(recurse_merge_sort([9, 3, 1, 18, 50]))
