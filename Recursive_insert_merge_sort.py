@@ -5,8 +5,8 @@ def recurse_insert_merge_sort(arr):
         return insert_sort(arr)
     left_side = arr[:len(arr)//2]
     right_side = arr[len(arr)//2:]
-    left_arr = recurse_merge_sort(left_side)
-    right_arr = recurse_merge_sort(right_side)
+    left_arr = recurse_insert_merge_sort(left_side)
+    right_arr = recurse_insert_merge_sort(right_side)
     return merge(left_arr, right_arr)
 
 def merge(left_arr, right_arr):
